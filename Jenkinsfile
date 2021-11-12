@@ -6,6 +6,12 @@ pipeline {
 	}
  
     stages {
+	    	stage('Cleanup') {
+		steps {
+			sh './jenkins/build/mvn.sh mvn clean'
+			deleteDir()
+		}
+	}
         stage('Build') {
             steps {
                 sh '''
@@ -31,11 +37,6 @@ pipeline {
                 sh './jenkins/deploy/deploy.sh'
             }
         }
-	stage('Cleanup') {
-		steps {
-			sh './jenkins/build/mvn.sh mvn clean'
-			deleteDir()
-		}
-	}
+
     }
 }
