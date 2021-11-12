@@ -9,7 +9,7 @@ pipeline {
 	    
 	    stage('Cleanup') {
 		steps {
-		deleteDir()
+		 sh 'rm *'
 		}
 	}
         stage('Build') {
