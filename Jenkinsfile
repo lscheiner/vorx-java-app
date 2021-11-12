@@ -6,6 +6,12 @@ pipeline {
 	}
  
     stages {
+	    
+	    stage('Cleanup') {
+		steps {
+		deleteDir()
+		}
+	}
         stage('Build') {
             steps {
                 sh '''
