@@ -40,6 +40,6 @@ pipeline {
             sh './jenkins/build/mvn.sh mvn clean'
 	    deleteDir()
         }
-    }
+    } 
 	
 }
