@@ -31,5 +31,10 @@ pipeline {
                 sh './jenkins/deploy/deploy.sh'
             }
         }
+	stage('Cleanup') {
+		steps {
+		deleteDir()
+		}
+	}
     }
 }
