@@ -11,7 +11,6 @@ pipeline {
                 sh '''
                    ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
                    ./jenkins/build/build.sh
-		   ./jenkins/build/mvn.sh mvn clean
                 '''
             }
         }
@@ -34,7 +33,8 @@ pipeline {
         }
 	stage('Cleanup') {
 		steps {
-		deleteDir()
+			sh './jenkins/build/mvn.sh mvn clean'
+			deleteDir()
 		}
 	}
     }
