@@ -6,12 +6,6 @@ pipeline {
 	}
  
     stages {
-	    
-	    stage('Cleanup') {
-		steps {
-		 sh 'rm *'
-		}
-	}
         stage('Build') {
             steps {
                 sh '''
